@@ -9,7 +9,7 @@
     </parent>
     <groupId>travel.wink</groupId>
     <artifactId>hotelbeds-sdk-java</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <packaging>pom</packaging>
     <name>Hotelbeds Java SDK</name>
     <description>Java libraries for all Hotelbeds APIs.</description>
@@ -71,6 +71,12 @@
         <threetenbp.version>1.6.8</threetenbp.version>
         <versions.maven.plugin>2.8.1</versions.maven.plugin>
     </properties>
+
+    <modules>
+        <module>booking</module>
+        <module>cache</module>
+        <module>content</module>
+    </modules>
 
     <build>
         <defaultGoal>compile</defaultGoal>
@@ -280,54 +286,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
                 <version>${maven.gpg.version}</version>
-            </plugin>
-
-            <plugin>
-                <groupId>org.openapitools</groupId>
-                <artifactId>openapi-generator-maven-plugin</artifactId>
-                <version>${openapi.generator.version}</version>
-                <configuration>
-                    <typeMappings>
-                        <typeMapping>OffsetDateTime=java.time.LocalDateTime</typeMapping>
-                        <typeMapping>Double=java.math.BigDecimal</typeMapping>
-                    </typeMappings>
-                    <importMappings>
-                        <importMapping>java.time.OffsetDateTime=java.time.LocalDateTime</importMapping>
-                        <importMapping>java.lang.Double=java.math.BigDecimal</importMapping>
-                    </importMappings>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <inputSpec>${project.basedir}/src/main/resources/openapi-spec.yaml</inputSpec>
-                            <generatorName>java</generatorName>
-                            <generateApiDocumentation>false</generateApiDocumentation>
-                            <generateModelDocumentation>false</generateModelDocumentation>
-                            <generateApiTests>false</generateApiTests>
-                            <generateModelTests>false</generateModelTests>
-                            <skipValidateSpec>true</skipValidateSpec>
-                            <configOptions>
-                                <!-- <additionalModelTypeAnnotations>@lombok.Builder</additionalModelTypeAnnotations> -->
-                                <sourceFolder>src/gen/java/main</sourceFolder>
-                                <apiPackage>travel.wink.hotelbeds.sdk.api</apiPackage>
-                                <modelPackage>travel.wink.hotelbeds.sdk.model</modelPackage>
-                                <invokerPackage>travel.wink.hotelbeds.sdk.invoker</invokerPackage>
-                                <library>webclient</library>
-                                <dateLibrary>java8</dateLibrary>
-                                <disallowAdditionalPropertiesIfNotPresent>true</disallowAdditionalPropertiesIfNotPresent>
-                                <java8>true</java8>
-                                <performBeanValidation>true</performBeanValidation>
-                                <serializationLibrary>jackson</serializationLibrary>
-                                <useBeanValidation>true</useBeanValidation>
-                                <useGzipFeature>true</useGzipFeature>
-                                <useJakartaEe>true</useJakartaEe>
-                            </configOptions>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>

@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #
 # Copyright (c) 2023. wink.travel. All rights Reserved.
 # Responsibility:
@@ -17,12 +16,23 @@ retrieveOpenApiSpecFunction() {
   echo "Download of $url complete"
 }
 
-echo "Download latest deployed Open API specs..."
-echo "Grabbing Hotelbeds spec..."
-url="https://bitbucket.org/ApiPortalHotelbeds/apitude-openapi/raw/master/OpenAPI-Hotel-BookingAPI-3.0.yaml"
-outputLocation="./src/main/resources/openapi-spec.yaml"
+echo "Grabbing Hotelbeds Booking spec..."
+bookingUrl="https://bitbucket.org/ApiPortalHotelbeds/apitude-openapi/raw/master/OpenAPI-Hotel-BookingAPI-3.0.yaml"
+bookingSpecLocation="./booking/src/main/resources/openapi-spec.yaml"
 
-retrieveOpenApiSpecFunction $url $outputLocation
+retrieveOpenApiSpecFunction $bookingUrl $bookingSpecLocation
+
+echo "Grabbing Hotelbeds Cache spec..."
+contentUrl="https://bitbucket.org/ApiPortalHotelbeds/apitude-openapi/raw/master/OpenAPI-Hotel-CacheAPI-3.0.yaml"
+contentSpecLocation="./cache/src/main/resources/openapi-spec.yaml"
+
+retrieveOpenApiSpecFunction $contentUrl $contentSpecLocation
+
+echo "Grabbing Hotelbeds Content spec..."
+contentUrl="https://bitbucket.org/ApiPortalHotelbeds/apitude-openapi/raw/master/OpenAPI-Hotel-ContentAPI-3.0.yaml"
+contentSpecLocation="./content/src/main/resources/openapi-spec.yaml"
+
+retrieveOpenApiSpecFunction $contentUrl $contentSpecLocation
 
 STATUS=$?
 if [ $STATUS -ne 0 ]; then
