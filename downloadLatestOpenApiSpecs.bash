@@ -22,6 +22,12 @@ bookingSpecLocation="./booking/src/main/resources/openapi-spec.yaml"
 
 retrieveOpenApiSpecFunction $bookingUrl $bookingSpecLocation
 
+echo "Grabbing Hotelbeds Cache spec..."
+contentUrl="https://bitbucket.org/ApiPortalHotelbeds/apitude-openapi/raw/master/OpenAPI-Hotel-CacheAPI-3.0.yaml"
+contentSpecLocation="./cache/src/main/resources/openapi-spec.yaml"
+
+retrieveOpenApiSpecFunction $contentUrl $contentSpecLocation
+
 echo "Grabbing Hotelbeds Content spec..."
 contentUrl="https://bitbucket.org/ApiPortalHotelbeds/apitude-openapi/raw/master/OpenAPI-Hotel-ContentAPI-3.0.yaml"
 contentSpecLocation="./content/src/main/resources/openapi-spec.yaml"

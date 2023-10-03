@@ -7,10 +7,10 @@
         <artifactId>hotelbeds-sdk-java</artifactId>
         <version>0.0.2-SNAPSHOT</version>
     </parent>
-    <artifactId>hotelbeds-content-sdk-java</artifactId>
+    <artifactId>hotelbeds-cache-sdk-java</artifactId>
     <packaging>jar</packaging>
-    <name>Hotelbeds Content SDK Java</name>
-    <description>Java SDK for the Hotelbeds Content API</description>
+    <name>Hotelbeds Cache SDK Java</name>
+    <description>Java SDK for the Hotelbeds Cache API</description>
 
     <build>
         <plugins>
@@ -45,9 +45,9 @@
                             <configOptions>
                                 <!-- <additionalModelTypeAnnotations>@lombok.Builder</additionalModelTypeAnnotations> -->
                                 <sourceFolder>src/gen/java/main</sourceFolder>
-                                <apiPackage>travel.wink.hotelbeds.content.sdk.api</apiPackage>
-                                <modelPackage>travel.wink.hotelbeds.content.sdk.model</modelPackage>
-                                <invokerPackage>travel.wink.hotelbeds.content.sdk.invoker</invokerPackage>
+                                <apiPackage>travel.wink.hotelbeds.cache.sdk.api</apiPackage>
+                                <modelPackage>travel.wink.hotelbeds.cache.sdk.model</modelPackage>
+                                <invokerPackage>travel.wink.hotelbeds.cache.sdk.invoker</invokerPackage>
                                 <library>webclient</library>
                                 <dateLibrary>java8</dateLibrary>
                                 <disallowAdditionalPropertiesIfNotPresent>true</disallowAdditionalPropertiesIfNotPresent>
@@ -65,11 +65,4 @@
         </plugins>
     </build>
 
-<!--    <dependencies>-->
-<!--        <dependency>-->
-<!--            <groupId>travel.wink</groupId>-->
-<!--            <artifactId>oauth2-web-client</artifactId>-->
-<!--            <version>${project.parent.version}</version>-->
-<!--        </dependency>-->
-<!--    </dependencies>-->
 </project>
