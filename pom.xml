@@ -9,7 +9,7 @@
     </parent>
     <groupId>travel.wink</groupId>
     <artifactId>hotelbeds-sdk-java</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Hotelbeds Java SDK</name>
     <description>Java libraries for all Hotelbeds APIs.</description>
